@@ -7,3 +7,4 @@
 <p><a href="https://ibb.co/t2jdZbg"><img src="https://i.ibb.co/fN6c8Cf/Editoriales.png" alt="Editoriales" border="0"></a></p>
 <p><a href="https://ibb.co/zHjtDj0"><img src="https://i.ibb.co/0V8zv8d/Limite.png" alt="Limite" border="0"></a></p>
 <p><a href="https://ibb.co/N1Ltxnn"><img src="https://i.ibb.co/XyzjXkk/Validaciones.png" alt="Validaciones" border="0"></a></p>
+<p><a href="https://ibb.co/kS6Grmb"><img src="https://i.ibb.co/NynFkTD/Integridad.png" alt="Integridad" border="0"></a></p>
