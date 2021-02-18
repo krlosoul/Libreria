@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{1C5F2269-866A-4C31-8952-6FED550120EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{F578F4B8-A8CB-4930-AED9-322CEE9008AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spa", "Spa\Spa.csproj", "{6D477277-A94A-4642-82A7-308361AF7966}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C5F2269-866A-4C31-8952-6FED550120EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C5F2269-866A-4C31-8952-6FED550120EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C5F2269-866A-4C31-8952-6FED550120EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5F2269-866A-4C31-8952-6FED550120EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F578F4B8-A8CB-4930-AED9-322CEE9008AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F578F4B8-A8CB-4930-AED9-322CEE9008AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F578F4B8-A8CB-4930-AED9-322CEE9008AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F578F4B8-A8CB-4930-AED9-322CEE9008AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D477277-A94A-4642-82A7-308361AF7966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D477277-A94A-4642-82A7-308361AF7966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D477277-A94A-4642-82A7-308361AF7966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D477277-A94A-4642-82A7-308361AF7966}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E62B0154-52A9-472B-BA9F-5ED26E70637E}
+	EndGlobalSection
+EndGlobal

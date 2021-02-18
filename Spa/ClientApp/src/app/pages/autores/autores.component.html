@@ -1,0 +1,75 @@
+<div class="col-lg-12 col-md-12 col-sm-12">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <label>Nombre Completo</label>
+          <input type="text" maxlength="45" class="form-control" [disabled]="!enable" [(ngModel)]="model.nombreCompleto" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <label>Fecha de Nacimiento</label>
+          <input type="date" class="form-control" [disabled]="!enable" [(ngModel)]="model.fechaNacimiento" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <label>Ciudad</label>
+          <input type="text" maxlength="45" class="form-control" [disabled]="!enable" [(ngModel)]="model.ciudad" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <label>Correo</label>
+          <input type="email" maxlength="45" class="form-control" [disabled]="!enable" [(ngModel)]="model.correo" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12" align="right">
+      <br />
+      <button class="btn btn-primary" (click)="crear()" *ngIf="!enable">Crear</button>&nbsp;
+      <button class="btn btn-primary" (click)="editar()" *ngIf="!enable">Editar</button>&nbsp;
+      <button class="btn btn-danger" (click)="eliminar()" *ngIf="!enable">Eliminar</button>&nbsp;
+      <button class="btn btn-primary" (click)="guardar()" *ngIf="enable">Guardar</button>&nbsp;
+      <button class="btn btn-danger" (click)="cancelar()" *ngIf="enable">Cancelar</button>
+      <br />
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <table id="tbl" class="table table-striped">
+        <thead>
+          <tr>
+            <th style="width: 10%;">Id</th>
+            <th style="width: 50%;">Nombre Completo</th>
+            <th style="width: 30%;">Fecha de Nacimiento</th>
+            <th style="width: 30%;">Ciudad</th>
+            <th style="width: 30%;">Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of DataGrid" (click)="onSelect($event, item)" data-item="item">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombreCompleto }}</td>
+            <td>{{ item.fechaNacimiento | date:'dd-MM-yyyy' }}</td>
+            <td>{{ item.ciudad }}</td>
+            <td>{{ item.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-center p-2">
+        <ngb-pagination [maxSize]="10" [collectionSize]="collectionSize" (pageChange)="onChange($event)" [(page)]="page" [pageSize]="pageSize">
+        </ngb-pagination>
+
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="cargarGrid()">
+          <option [ngValue]="5">5 Items por página</option>
+          <option [ngValue]="10">10 Items por página</option>
+          <option [ngValue]="20">20 Items por página</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</div>
