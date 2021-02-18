@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace Spa.Controllers
 {
@@ -129,13 +131,30 @@ namespace Spa.Controllers
             try
             {
                 //Se realiza la búsqueda de la información a eliminar
-                Autores patch = db.autores.Find(id);
+                //Autores patch = db.autores.Find(id);
+                Autores patch = await db.autores.Include(x => x.AutoresLibros).Where(x => x.Id == id).FirstOrDefaultAsync();
 
                 if (patch == default(Autores))
                 {
                     //En caso de no encontrar el registro se genera una excepción para informar al usuario
                     throw new CustomException("El registro que intenta eliminar ya no se encuentra en la base de datos, por favor refresque la ventana e intentelo de nuevo");
                 }
+
+                //Se valida que no tenga relaciones
+                if (patch.AutoresLibros.Count > 0)
+                {
+                    StringBuilder libros = new StringBuilder();
+
+                    //Se mapean los libros relacionados
+                    foreach (AutoresLibros libro in patch.AutoresLibros)
+                    {
+                        libros.AppendLine("<li>" + libro.LibrosIsbn + "</li>");
+                    }
+
+                    //Se genera excepción de tipo "Custom Exception" para su debida interpretación por el manejador
+                    throw new CustomException("<p>No es posible eliminar el autor ya que tiene libros relacionados, por favor elimine la relación entre los libros y el autor seleccionado para continuar. Los libros relacionados con codigo ISBN son:</p><ul>" + libros.ToString() + "</ul>");
+                }
+
                 //En caso de pasar la validación se elimina la entidad de la colección
                 db.autores.Remove(patch);
                 //Se ejecuta el almacenamiento de los campos en la base de datos para su eliminación
